@@ -23,8 +23,7 @@ La aquitectura se basa en un proxy, y un servicio en dos instancias EC2 separada
 
 ## Prueba de funcionamiento En local
 
-
-
+![alt text](image.png)
 
 ## El despliegue 
 

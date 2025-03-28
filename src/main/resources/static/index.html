@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Parcial Secuencia Lucas</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+
+<script>
+    function loadGetMsg() {
+        let Var = document.getElementById("name").value;
+
+        if (!Var) {
+            document.getElementById("getint").innerHTML = "Por favor, ingrese un valor válido.";
+            return;
+        }
+
+        const xhttp = new XMLHttpRequest();
+
+        xhttp.onload = function () {
+            try {
+                let response = JSON.parse(this.responseText);
+                document.getElementById("getint").innerHTML =
+                    `<pre>${JSON.stringify(response, null, 2)}</pre>`;
+            } catch (e) {
+                document.getElementById("getint").innerHTML = "Error en la respuesta del servidor.";
+            }
+        };
+
+        xhttp.open("GET", `/lucasseq?value=${encodeURIComponent(Var)}`);
+        xhttp.send();
+    }
+</script>
+
+
+<body>
+    <h1>Secuencia Lucas</h1>
+    <form action="/lucasseq">
+        <label for="name">Ingrese el n válido</label><br>
+        <input type="text" id="name" name="name" placeholder="Ingrese su n valor"><br><br>
+        <input type="button" value="Submit" onclick="loadGetMsg()">
+    </form>
+    <div id="getint"></div>
+
+    
+</body>
+</html>

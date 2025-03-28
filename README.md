@@ -19,7 +19,7 @@ La secuencia de Lucas se calcula de la siguiente manera :
 
 ## Desarrollo 
 
-La aquitectura se basa en un proxy, y un servicio en una instancia EC2, el proxy, sirve como puente de comunicación para delagar la logica al servicio 
+La aquitectura se basa en un proxy, y un servicio en dos instancias EC2 separadas, el proxy, sirve como puente de comunicación para delagar la logica al servicio 
 
 ## Prueba de funcionamiento En local
 
